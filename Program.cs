@@ -9,7 +9,8 @@ internal class Program
 
         var ctx = new EfContext();
 
-        var users = ctx.Users.Include(u => u.Roles).ToList();
+        var usersQ = ctx.Users.Include(u => u.Roles);
+        var users = usersQ.ToList();
 
         foreach (var user in users)
         {
